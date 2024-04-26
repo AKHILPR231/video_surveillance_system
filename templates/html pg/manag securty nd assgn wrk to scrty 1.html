@@ -1,0 +1,40 @@
+{% extends 'admin1index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="searchsecurity">
+  <table class="table table-hover">
+    <tr>
+      <td colspan="6">Name 
+        <label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />
+        <input type="submit" name="Submit" value="Search" />
+      </label></td>
+    </tr>
+    <tr>
+      <td width="144">Name</td>
+      <td width="144">Address</td>
+      <td width="144">Id proof </td>
+      <td width="144">Phone</td>
+      <td width="144">Email</td>
+      <td width="126"><p>&nbsp;</p>
+      </td>
+    </tr>
+    <tr>
+        {% for i in val %}
+      <td><label>{{ i.name }}</label></td>
+      <td><label>{{ i.address }}</label></td>
+      <td><label><img src="media/{{ i.idproof }}" width="100" height="100"/> </label></td>
+      <td><label>{{ i.phone }}</label></td>
+      <td><label>{{ i.email }}</label></td>
+      <td width="126"><p><a href="/edit_security/{{ i.id }}#about">Edit</a></p>
+        <p><a href="/delete_security/{{ i.LOGIN.id }}">Delete</a></p>
+      <p><a href="/assign_work1/{{ i.id }}#about">Emergency</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center"><a href="/add_security#about">Add new</a> </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

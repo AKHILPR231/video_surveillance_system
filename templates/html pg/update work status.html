@@ -1,0 +1,24 @@
+{% extends 'security1index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/updt">
+  <table class="table table-hover">
+    <tr>
+      <td width="96" height="40">Status</td>
+      <td width="181"><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td height="55" colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="ADD" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

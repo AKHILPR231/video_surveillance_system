@@ -1,0 +1,27 @@
+{% extends 'admin1index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <td width="50">C_Number</td>
+      <td width="49">Latitude</td>
+      <td width="60">Longitude</td>
+      <td width="111">&nbsp;</td>
+    </tr>
+    <tr>
+        {% for i in val %}
+      <td height="72">{{ i.camera_no }}</td>
+      <td>{{ i.latitude }}</td>
+      <td>&nbsp;{{ i.longitude }}</td>
+      <td><a href="delete_camera/{{ i.id }}">Delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td height="72" colspan="4"><div align="center"><a href="add_camera2#about">Add New</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

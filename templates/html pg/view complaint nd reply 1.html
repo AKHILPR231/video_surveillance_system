@@ -1,0 +1,32 @@
+{% extends 'admin1index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="searchcomplaint">
+  <table class="table table-hover">
+    <tr>
+      <td colspan="4">Date 
+        <label>
+        <input type="date" name="textfield" required />
+        <input type="submit" name="Submit" value="Search" />
+      </label></td>
+    </tr>
+    <tr>
+      <td width="54">Name</td>
+      <td width="110">Complaint</td>
+      <td width="47">Date</td>
+      <td width="144">&nbsp;</td>
+    </tr>
+    <tr>
+        {% for i in val %}
+      <td height="65">{{ i.security.name }}</td>
+      <td>{{ i.complaint }}</td>
+      <td>{{ i.date }}</td>
+
+      <td>{% if i.reply == 'pending' %}<a href="/send_reply/{{ i.id }}#about">Reply</a>{% else %}{{ i.reply }}{% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

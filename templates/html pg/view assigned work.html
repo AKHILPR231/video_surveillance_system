@@ -1,0 +1,28 @@
+{% extends 'security1index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <td width="55">Message</td>
+      <td width="55">Message</td>
+      <td width="70">Date</td>
+      <td width="96">&nbsp;Time</td>
+              <td width="62">Response</td>
+    </tr>
+    <tr>
+        {% for i in val %}
+      <td height="80">{{ i.police.name }}</td>
+      <td height="80">{{ i.message }}</td>
+{#      <td>&nbsp;<a href="" >Response</td>#}
+      <td>&nbsp;{{i.date  }}</td>
+      <td>&nbsp;{{i.time  }}</td>
+      <td><p>{% if i.response == 'pending' %}<a href="/add_report/{{ i.id }}#about">Response</a>{% else %}{{ i.response }}{% endif %}</p>
+{#      <p><a href="/updatework_status/{{ i.id }}#about">Update</a></p></td>#}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'admin1index.html' %}
+{% block body %}
+
+<body>
+<form action="/editsecurity_code" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-hover">
+    <tr>
+      <td>Name</td>
+      <td><label>
+        <input type="text" name="textfield" value="{{ val.name }}" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td><label>
+        <input name="radiobutton" type="text" required value="{{ val.address }}" />
+     </td>
+    </tr>
+    <tr>
+      <td>Id proof </td>
+      <td><label>
+        <input type="file" name="file" value="{{ val.idproof }}" /><img src="/media/{{ val.idproof }}" height="100px" width="100px" alt=""/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{val.phone}}"  required pattern="[6789][0-9]{9}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label>
+        <input type="text" name="textfield3" value="{{val.email}}"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/>
+      </label></td>
+    </tr>
+
+      <tr>
+      <td>Rank</td>
+      <td><label>
+        <input type="text" name="textfield3" value="{{val.rank}}"required />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="Register" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

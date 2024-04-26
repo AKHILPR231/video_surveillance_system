@@ -1,0 +1,26 @@
+{% extends 'security1index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <td width="109">Camera id </td>
+      <td width="78">Latitude</td>
+      <td width="88">Longitude</td>
+
+    </tr>
+    <tr>
+        {% for i in val %}
+      <td height="83">{{ i.camera.camera_no }}</td>
+      <td>{{ i.camera.latitude }}</td>
+      <td>&nbsp;{{ i.camera.longitude }}</td>
+
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

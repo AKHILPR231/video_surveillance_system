@@ -1,0 +1,25 @@
+{% extends 'admin1index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <td width="75">Camera</td>
+      <td width="261">Notification</td>
+{#        <td width="261">Response</td>#}
+        <td width="75">Date</td>
+      <td width="261">Time</td>
+    </tr>
+    <tr>
+        {% for i in val %}
+      <td height="80">&nbsp;{{ i.camera.camera_no }}</td>
+      <td>&nbsp;<img src="/media/{{ i.notification }}" width="150" height="150"/> </td>
+{#            <td>{{ i.status }}</td>#}
+            <td>&nbsp;{{ i.date }}</td>
+            <td>{{ i.time }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

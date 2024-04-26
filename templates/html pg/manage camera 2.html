@@ -1,0 +1,35 @@
+{% extends 'admin1index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="add_cameracode">
+  <table class="table table-hover">
+    <tr>
+      <td width="118">Camera number </td>
+      <td width="205"><label>
+        <input type="number" name="textfield" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Latitude </td>
+      <td><label>
+        <input type="text" name="textfield2" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Longitude</td>
+      <td><label>
+        <input type="text" name="textfield3" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="41" colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Submit" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

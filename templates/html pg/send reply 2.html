@@ -1,0 +1,23 @@
+{% extends 'admin1index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/sdrply">
+  <table class="table table-hover">
+    <tr>
+      <td width="54" height="54">Reply</td>
+      <td width="175"><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td height="58" colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Send" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
